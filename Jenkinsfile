@@ -15,21 +15,21 @@ pipeline {
 
         stage('Deploy Redis') {
             steps {
-                sh 'kubectl apply -f redis-deployment.yaml'
+                sh '/opt/homebrew/bin/kubectl apply -f redis-deployment.yaml'
             }
         }
 
         stage('Deploy Application') {
             steps {
-                sh 'kubectl apply -f deployment.yaml'
-                sh 'kubectl apply -f service.yaml'
+                sh '/opt/homebrew/bin/kubectl apply -f deployment.yaml'
+                sh '/opt/homebrew/bin/kubectl apply -f service.yaml'
             }
         }
 
         stage('Verify Deployment') {
             steps {
-                sh 'kubectl get pods'
-                sh 'kubectl get svc'
+                sh '/opt/homebrew/bin/kubectl get pods'
+                sh '/opt/homebrew/bin/kubectl get svc'
             }
         }
     }
