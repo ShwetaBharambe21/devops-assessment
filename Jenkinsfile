@@ -2,7 +2,8 @@ pipeline {
     agent any
 
     environment {
-        APP_NAME = "flask-devops-app"
+    APP_NAME = "flask-devops-app"
+    KUBECONFIG = "/Users/shwetabharambe/.kube/config"
     }
 
     stages {
