@@ -9,7 +9,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t $APP_NAME .'
+                sh '/usr/local/bin/docker build -t flask-devops-app .'
             }
         }
 
